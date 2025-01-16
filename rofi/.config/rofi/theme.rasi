@@ -1,0 +1,159 @@
+@theme "/dev/null"
+
+* {
+    foreground:             #d9e0ee;
+    background:             rgba(51, 53, 58, 65%);
+    background-input:       rgba(127, 132, 155, 15%);
+    background-selected:    #B64BC8;
+}
+
+window {
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       25%;
+    x-offset:                    0px;
+    y-offset:                    0px;
+
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               12px;
+    border-color:                @background;
+    background-color:            @background;
+    cursor:                      "default";
+}
+
+mainbox {
+    enabled:                     true;
+    spacing:                     2%;
+    margin:                      0px;
+    padding:                     2% 1% 2% 1%;
+    border:                      0px solid;
+    border-radius:               12px;
+    border-color:                @background;
+    background-color:            transparent;
+    children:                    [ inputbar, listview ];
+}
+
+inputbar {
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     10px;
+    border:                      0px solid;
+    border-radius:               8px;
+    border-color:                @selected;
+    background-color:            @background-input;
+    text-color:                  @foreground;
+    children:                    [ prompt, entry ];
+}
+
+prompt {
+    enabled:                     false;
+}
+
+textbox-prompt-colon {
+    enabled:                     false;
+    expand:                      false;
+    str:                         "::";
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+
+entry {
+    enabled:                     true;
+    placeholder:                 "Search";
+    padding:                     5px 1% 5px 10px;
+    placeholder-color:           inherit;
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      text;
+}
+
+listview {
+    enabled:                     true;
+    columns:                     1;
+    lines:                       10;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    
+    spacing:                     6px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               12px;
+    border-color:                @selected;
+    background-color:            @background-input;
+    text-color:                  @foreground;
+    cursor:                      "default";
+}
+
+scrollbar {
+    handle-width:                5px ;
+    handle-color:                @selected;
+    border-radius:               0px;
+    background-color:            @background-alt;
+}
+
+element {
+    enabled:                     true;
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     1.2% 0% 1.2% 0%;
+    border:                      0px solid;
+    border-radius:               8px;
+    border-color:                @selected;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      pointer;
+}
+
+element selected {
+    background-color:            @background-selected;
+    text-color:                  @foreground;
+}
+
+element-icon {
+    background-color:            transparent;
+    text-color:                  inherit;
+    size:                        32px;
+    cursor:                      inherit;
+}
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    highlight:                   inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+    margin:                      0% 0.8% 0% 0.8%;
+}
+
+element-text selected {
+    text-color:                  @background;
+}
+
+error-message {
+    padding:                     15px;
+    border:                      2px solid;
+    border-radius:               12px;
+    border-color:                @selected;
+    background-color:            @background;
+    text-color:                  @foreground;
+}
+
+textbox {
+    background-color:            @background;
+    text-color:                  @foreground;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+    highlight:                   none;
+}

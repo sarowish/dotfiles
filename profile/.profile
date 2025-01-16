@@ -1,0 +1,13 @@
+export EDITOR=nvim
+export SHELL=/usr/bin/fish
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_STATE_HOME=$HOME/.local/state
+export CARGO_HOME=$XDG_DATA_HOME/cargo
+export CUDA_CACHE_PATH=$XDG_CACHE_HOME/nv
+export GNUPGHOME=$XDG_DATA_HOME/gnupg
+export LESSHISTFILE=$XDG_STATE_HOME/less/history
+export RUSTUP_HOME=$XDG_DATA_HOME/rustup
+export SQLITE_HISTORY=$XDG_CACHE_HOME/sqlite_history
+export ZDOTDIR=$XDG_CONFIG_HOME/zsh

@@ -1,0 +1,7 @@
+background-color=#1e1e2ebb
+border-color=#B64BC8
+border-radius=8
+
+default-timeout=5000
+layer=overlay
+font=Fira Sans Book 10

@@ -1,0 +1,42 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "Fira Sans Book", "Nerd Fonts";
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: white;
+}
+
+#workspaces button {
+    padding: 0 2px;
+    background: transparent;
+    color: white;
+}
+
+#workspaces button.active {
+    color: #B64BC8;
+}
+
+#workspaces button:hover {
+    text-shadow: inherit;
+}
+
+#tags button.occupied {
+    color: #B64BC8;
+} 
+
+#tags button.focused {
+    color: #B64BC8;
+}
+
+#clock,
+#pulseaudio
+#language,
+#cpu,
+#memory {
+    padding: 0 4px;
+}
+

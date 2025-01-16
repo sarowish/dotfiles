@@ -1,0 +1,70 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    "height": 30,
+    "spacing": 8,
+    "margin-left": 8,
+    "margin-right": 8,
+    "modules-left": ["hyprland/workspaces", "mpris"],
+    "modules-center": ["clock"],
+    "modules-right": ["pulseaudio", "hyprland/language", "custom/memory", "cpu", "tray"],
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "persistent-workspaces": {
+            "*": 9,
+        },
+        "all-outputs": false,
+        "on-scroll-up": "hyprctl dispatch workspace +1",
+        "on-scroll-down": "hyprctl dispatch workspace -1",
+        "on-click": "activate",
+        "format": "{icon}",
+        "format-icons": {
+            "urgent": "",
+            "active": "",
+            "default": "",
+            "empty": "",
+        }
+    },
+    "hyprland/language": {
+        "format": "<span color='#B64BC8'>󰌌</span>  {}",
+        "format-en": "English",
+        "format-en-colemak_dh": "Colemak-DH",
+        "format-tr": "Turkish",
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10,
+        "show-passive-items": true,
+    },
+    "clock": {
+        // "timezone": "America/New_York",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "interval": 1,
+        "format": "{:%e %B %A %H:%M:%S}",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": "<span color='#B64BC8'></span> {usage}%",
+        "tooltip": false
+    },
+    "custom/memory": {
+        "format": "<span color='#B64BC8'></span> {} MiB",
+        "exec": "free -m | awk '/Mem:/{printf $3}'",
+        "interval": 3,
+    },
+    "mpris": {
+        "player": "spotify",
+        "format": "{artist} - {title}",
+        "title-len": 60,
+    },
+    "pulseaudio": {
+        "scroll-step": 5, // %, can be a float
+        "format": "<span color='#B64BC8'>{icon}</span> {volume}%",
+        "format-muted": "󰖁 muted",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+}
+

@@ -1,0 +1,50 @@
+[colors.normal]
+black = "#302d41"
+blue = "#96cdfb"
+cyan = "#a1e1d6"
+green = "#abe9b3"
+magenta = "#ddb6f2"
+red = "#f28fad"
+white = "#d9e0ee"
+yellow = "#fae3b0"
+
+[colors.bright]
+black = "#575268"
+blue = "#96cdfb"
+cyan = "#89dceb"
+green = "#abe9b3"
+magenta = "#ddb6f2"
+red = "#f28fad"
+white = "#d9e0ee"
+yellow = "#fae3b0"
+
+[colors.primary]
+background = "#1e1e2e"
+foreground = "#d9e0ee"
+
+[colors.selection]
+background = "#45475a"
+text = "CellForeground"
+
+[font]
+normal = { family = "Cascadia Code" }
+size = 10.5
+
+[font.offset]
+x = 0
+y = 0
+
+[window]
+opacity = 0.9
+
+[window.padding]
+x = 2
+y = 2
+
+[cursor]
+style = { shape = "Beam", blinking = "Off" }
+
+[keyboard]
+bindings = [
+    { key = "Enter", mods = "Shift", action = "SpawnNewInstance"}
+]
