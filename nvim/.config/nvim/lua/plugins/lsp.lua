@@ -17,6 +17,7 @@ return {
                         idx = (idx + relative - 1) % #locations + 1
                         vim.lsp.util.show_document(locations[idx], "utf-16")
                         vim.api.nvim_exec_autocmds("CursorHold", { group = "lsp-highlight" })
+                        vim.notify(("Local References [%d/%d]"):format(idx, #locations))
                         break
                     end
                 end
