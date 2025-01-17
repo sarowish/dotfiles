@@ -1,12 +1,12 @@
 set fish_greeting ""
 
-alias ip='ip -c'
-alias clock='tty-clock -sc'
-alias neovim='nvim'
-alias n='nvim'
-alias mix='pulsemixer'
-alias neofetch='hyfetch'
-alias bw='bawa'
+abbr ip 'ip -c'
+abbr clock 'tty-clock -sc'
+abbr neovim nvim
+abbr n nvim
+abbr mix pulsemixer
+abbr neofetch hyfetch
+abbr bw bawa
 
 zoxide init fish | source
 starship init fish | source
