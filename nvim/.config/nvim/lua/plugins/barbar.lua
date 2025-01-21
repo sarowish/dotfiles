@@ -7,6 +7,9 @@ return {
         auto_hide = true,
         icons = {
             button = '✖'
+        },
+        sidebar_filetypes = {
+            NvimTree = true
         }
     }
 }
