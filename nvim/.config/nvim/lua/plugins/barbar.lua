@@ -1,10 +1,9 @@
 return {
     'romgrk/barbar.nvim',
-    init = function()
-        vim.g.barbar_auto_setup = false
-    end,
+    init = function() vim.g.barbar_auto_setup = false end,
     opts = {
         auto_hide = true,
+        exclude_name = {""},
         icons = {
             button = '✖'
         },
