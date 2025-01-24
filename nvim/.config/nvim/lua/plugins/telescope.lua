@@ -5,6 +5,9 @@ return {
     keys = {
         { '<leader><tab>',         function() require('telescope.builtin').find_files() end },
         { '<leader><leader><tab>', function() require('telescope.builtin').buffers() end },
+        { '<leader><leader>r',     function() require('telescope.builtin').resume() end },
+        { '<leader><leader>l',     function() require('telescope.builtin').live_grep() end },
+        { '<leader><leader>b',     function() require('telescope.builtin').builtin() end },
         { '<leader><leader>s',     function() require('telescope.builtin').lsp_document_symbols() end },
         { '<leader><leader>w',     function() require('telescope.builtin').lsp_workspace_symbols() end },
     },
