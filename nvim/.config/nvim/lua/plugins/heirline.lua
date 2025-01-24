@@ -316,20 +316,10 @@ return {
             ViMode, Space, FileNameBlock, Space, Space, Git, Align, Diagnostics, Space, Ruler
         }
 
-        local InactiveStatusLine = {
-            condition = function()
-                return conditions.is_not_active()
-            end,
-            FileNameBlock,
-            Space,
-            Git,
-            Align,
-        }
-
         local SpecialStatusLine = {
             condition = function()
                 return conditions.buffer_matches({
-                    buftype = { "nofile", "prompt", "help", "quickfix" },
+                    buftype = { "prompt", "quickfix" },
                     filetype = { "^git.*", "fugitive" },
                 })
             end,
@@ -337,6 +327,25 @@ return {
             Space,
             Git,
             Align,
+        }
+
+        local HelpStatusLine = {
+            condition = function()
+                return conditions.buffer_matches({
+                    filetype = { "help", "man" },
+                })
+            end,
+            ViMode,
+            Space,
+            {
+                provider = function()
+                    return vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":t")
+                end,
+                hl = { fg = colors.text },
+            },
+            Space,
+            Align,
+            Ruler
         }
 
         local TerminalStatusline = {
@@ -364,7 +373,7 @@ return {
 
             SpecialStatusLine,
             TerminalStatusline,
-            InactiveStatusLine,
+            HelpStatusLine,
             DefaultStatusLine,
         }
         return { statusline = StatusLines }

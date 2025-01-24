@@ -1,4 +1,5 @@
 set fish_greeting ""
+set -x MANPAGER 'nvim +Man!'
 
 abbr ip 'ip -c'
 abbr clock 'tty-clock -sc'
