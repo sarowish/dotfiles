@@ -6,6 +6,10 @@ return
         width = 150,
         minSideBufferWidth = 20,
         buffers = {
-            wo = { fillchars = "eob: " } }
+            wo = { fillchars = "eob: " } },
+        autocmds = {
+            skipEnteringNoNeckPainBuffer = true,
+        }
+
     },
 }
