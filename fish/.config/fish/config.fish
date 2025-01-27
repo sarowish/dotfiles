@@ -8,6 +8,7 @@ abbr n nvim
 abbr mix pulsemixer
 abbr neofetch hyfetch
 abbr bw bawa
+abbr zatt 'zathura --fork'
 
 zoxide init fish | source
 starship init fish | source
