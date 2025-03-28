@@ -65,8 +65,15 @@ return {
 
             local lsp = require('lspconfig')
 
-            lsp.pyright.setup {
+            lsp.basedpyright.setup {
                 capabilities = capabilities,
+                settings = {
+                    basedpyright = {
+                        analysis = {
+                            typeCheckingMode = "off"
+                        }
+                    }
+                }
             }
 
             lsp.clangd.setup {
