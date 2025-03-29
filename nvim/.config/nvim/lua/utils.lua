@@ -1,11 +1,5 @@
 local M = {}
 
-function M.call_local_script(name, func)
-    local sid = vim.fn.getscriptinfo({ name = name })[1].sid
-    local script = "<SNR>" .. sid .. "_" .. func
-    vim.call(script)
-end
-
 function M.get_filename_cached()
     local bufnr_name_cache = {}
     return function(bufnr)
@@ -18,13 +12,6 @@ function M.get_filename_cached()
         bufnr_name_cache[bufnr] = n
         return n
     end
-end
-
-function M.noautocmd(fn)
-    local ei = vim.o.eventignore
-    vim.o.eventignore = "all"
-    fn()
-    vim.o.eventignore = ei
 end
 
 function M.show_toc()
