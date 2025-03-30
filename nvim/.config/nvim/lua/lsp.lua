@@ -128,11 +128,4 @@ vim.diagnostic.config({
     virtual_text = true,
 })
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
-
-vim.lsp.config('*', {
-    capabilities = capabilities
-})
-
 vim.lsp.enable({ 'lua_ls', 'clangd', 'basedpyright' })

@@ -1,85 +1,71 @@
+local has_words_before = function()
+    local col = vim.api.nvim_win_get_cursor(0)[2]
+    if col == 0 then
+        return false
+    end
+    local line = vim.api.nvim_get_current_line()
+    return line:sub(col, col):match("%s") == nil
+end
+
 return {
-    'hrsh7th/nvim-cmp',
-    dependencies = {
-        'hrsh7th/cmp-path',
-        'hrsh7th/cmp-buffer',
-        'hrsh7th/cmp-nvim-lsp',
-        'saadparwaiz1/cmp_luasnip',
+    'saghen/blink.cmp',
+    dependencies = { 'rafamadriz/friendly-snippets' },
+
+    version = '1.*',
+
+    ---@module 'blink.cmp'
+    ---@type blink.cmp.Config
+    opts = {
+        keymap = {
+            preset = 'none',
+            ['<Tab>'] = {
+                function(cmp)
+                    if has_words_before() then
+                        return cmp.insert_next()
+                    end
+                end,
+                'fallback',
+            },
+            ['<S-Tab>'] = { 'insert_prev' },
+            ['<CR>'] = { 'accept', 'fallback' },
+            ['<C-u>'] = { 'scroll_documentation_up' },
+            ['<C-d>'] = { 'scroll_documentation_down' },
+            ['<C-space>'] = { 'show', 'hide_documentation', 'show_documentation' },
+            ['<C-e>'] = { 'hide' },
+            ['<Esc>'] = { 'cancel', 'fallback' },
+        },
+
+        appearance = {
+            nerd_font_variant = 'mono'
+        },
+
+        completion = {
+            documentation = {
+                auto_show = true,
+                auto_show_delay_ms = 50,
+                window = {
+                    max_height = 40,
+                    border = 'rounded'
+                }
+            },
+            list = { selection = { preselect = false } },
+            ghost_text = { enabled = true },
+            menu = {
+                border = 'rounded',
+                draw = {
+                    columns = { { 'kind_icon' }, { 'label' }, { 'kind' }, { 'label_description' } },
+                    components = {
+                        label_description = { width = { max = 40 } }
+                    }
+                }
+            }
+        },
+        sources = {
+            default = { 'lsp', 'path', 'snippets', 'buffer' },
+        },
+        fuzzy = {
+            implementation = "prefer_rust_with_warning"
+        },
     },
-    event = "InsertEnter",
-    after = 'LuaSnip',
-    config = function()
-        local luasnip = require("luasnip")
-        local cmp = require("cmp")
-        local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-        cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done({ map_char = { tex = '' } }))
-
-        cmp.setup {
-            confirm_opts = {
-                behavior = cmp.ConfirmBehavior.Replace,
-                select = true
-            },
-
-            snippet = {
-                expand = function(args) require("luasnip").lsp_expand(args.body) end
-            },
-
-            window = {
-                completion = cmp.config.window.bordered(),
-                documentation = cmp.config.window.bordered(),
-            },
-
-            experimental = {
-                ghost_text = true,
-            },
-
-            sources = {
-                { name = "nvim_lsp" },
-                { name = "path" },
-                { name = "luasnip" },
-                { name = "buffer" },
-                { name = "crates" },
-            },
-
-            mapping = cmp.mapping.preset.insert({
-                ["<C-u>"] = cmp.mapping.scroll_docs(-4),
-                ["<C-d>"] = cmp.mapping.scroll_docs(4),
-                ["<C-e>"] = cmp.mapping.abort(),
-                ["<C-Space>"] = cmp.mapping.complete(),
-                ['<CR>'] = cmp.mapping(function(fallback)
-                    if cmp.visible() then
-                        if luasnip.expandable() then
-                            luasnip.expand()
-                        else
-                            cmp.confirm({
-                                select = true,
-                            })
-                        end
-                    else
-                        fallback()
-                    end
-                end),
-
-                ["<Tab>"] = cmp.mapping(function(fallback)
-                    if cmp.visible() then
-                        cmp.select_next_item()
-                    elseif luasnip.locally_jumpable(1) then
-                        luasnip.jump(1)
-                    else
-                        fallback()
-                    end
-                end, { "i", "s" }),
-
-                ["<S-Tab>"] = cmp.mapping(function(fallback)
-                    if cmp.visible() then
-                        cmp.select_prev_item()
-                    elseif luasnip.locally_jumpable(-1) then
-                        luasnip.jump(-1)
-                    else
-                        fallback()
-                    end
-                end, { "i", "s" }),
-            })
-        }
-    end,
+    opts_extend = { "sources.default" }
 }
