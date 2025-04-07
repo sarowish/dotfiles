@@ -1,3 +1,5 @@
+;; extends
+
 ((type_identifier) @variable.builtin
  (#match? @variable.builtin "Self"))
 
@@ -29,3 +31,4 @@
 ] @keyword.operator
 
 (macro_invocation ("!") @namespace)
+(line_comment (doc_comment) @comment.documentation (#set! priority 200))
