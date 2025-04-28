@@ -8,8 +8,8 @@ xkb_symbols "basic" {
     key <AD02> {[ l, L ]};
     key <AD03> {[ u, U ]};
     key <AD04> {[ o, O ]};
-    key <AD05> {[ q, Q ]};
-    key <AD06> {[ slash, question ]};
+    key <AD05> {[ x, X ]};
+    key <AD06> {[ apostrophe, quotedbl ]};
     key <AD07> {[ f, F ]};
     key <AD08> {[ d, D ]};
     key <AD09> {[ h, H ]};
@@ -18,7 +18,7 @@ xkb_symbols "basic" {
     key <AC02> {[ r, R, colon ]};
     key <AC03> {[ i, I, comma ]};
     key <AC04> {[ a, A, period ]};
-    key <AC05> {[ x, X, less ]};
+    key <AC05> {[ q, Q, less ]};
     key <AC06> {[ y, Y, greater ]};
     key <AC07> {[ c, C, h, H ]};
     key <AC08> {[ s, S, j, J ]};
@@ -28,8 +28,8 @@ xkb_symbols "basic" {
     key <AB01> {[ z, Z ]};
     key <AB02> {[ comma, less ]};
     key <AB03> {[ period, greater ]};
-    key <AB04> {[ apostrophe, quotedbl ]};
-    key <AB05> {[ semicolon, colon ]};
+    key <AB04> {[ semicolon, colon ]};
+    key <AB05> {[ slash, question ]};
     key <AB06> {[ g, G ]};
     key <AB07> {[ p, P ]};
     key <AB08> {[ m, M]};
