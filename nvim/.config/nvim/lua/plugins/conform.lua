@@ -5,7 +5,8 @@ return {
     },
     opts = {
         formatters_by_ft = {
-            python = { "black" }
+            python = { "black" },
+            javascript = { "prettier" }
         }
     },
 }
