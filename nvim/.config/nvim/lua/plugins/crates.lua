@@ -9,9 +9,6 @@ return {
             hover = true,
         },
         completion = {
-            cmp = {
-                enabled = true,
-            },
             crates = {
                 enabled = true,
                 max_results = 8,

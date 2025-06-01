@@ -9,7 +9,6 @@ end
 
 return {
     'saghen/blink.cmp',
-    dependencies = { 'rafamadriz/friendly-snippets' },
 
     version = '1.*',
 
@@ -21,12 +20,13 @@ return {
             ['<Tab>'] = {
                 function(cmp)
                     if has_words_before() then
-                        return cmp.insert_next()
+                        return cmp.select_next()
                     end
                 end,
+                'snippet_forward',
                 'fallback',
             },
-            ['<S-Tab>'] = { 'insert_prev' },
+            ['<S-Tab>'] = { 'select_prev', "snippet_backward" },
             ['<CR>'] = { 'accept', 'fallback' },
             ['<C-u>'] = { 'scroll_documentation_up' },
             ['<C-d>'] = { 'scroll_documentation_down' },
@@ -60,6 +60,7 @@ return {
                 }
             }
         },
+        snippets = { preset = "luasnip" },
         sources = {
             default = { 'lsp', 'path', 'snippets', 'buffer' },
         },
