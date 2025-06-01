@@ -1,3 +1,4 @@
+export PATH=$PATH:~/.local/share/cargo/bin/
 export EDITOR=nvim
 export SHELL=/usr/bin/fish
 export XDG_CACHE_HOME=$HOME/.cache
