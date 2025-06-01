@@ -12,5 +12,14 @@ return {
     },
     config = function(_, opts)
         require('nvim-treesitter.configs').setup(opts)
+
+        local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+
+        parser_config.dgeval = {
+            install_info = {
+                url = "~/tree-sitter-dgeval",
+                files = { "src/parser.c" },
+            }
+        }
     end
 }
