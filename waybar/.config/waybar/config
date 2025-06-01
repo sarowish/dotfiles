@@ -26,7 +26,7 @@
         }
     },
     "hyprland/language": {
-        "format": "<span color='#FF4A76'>󰌌</span>  {}",
+        "format": "<span color='#AD6769'>󰌌</span>  {}",
         "format-en": "English",
         "format-en-colemak_dh": "Colemak-DH",
         "format-tr": "Turkish",
@@ -44,11 +44,11 @@
         "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
-        "format": "<span color='#FF4A76'></span> {usage}%",
+        "format": "<span color='#AD6769'></span> {usage}%",
         "tooltip": false
     },
     "custom/memory": {
-        "format": "<span color='#FF4A76'></span> {} MiB",
+        "format": "<span color='#AD6769'></span> {} MiB",
         "exec": "free -m | awk '/Mem:/{printf $3}'",
         "interval": 3,
     },
@@ -59,7 +59,7 @@
     },
     "pulseaudio": {
         "scroll-step": 5, // %, can be a float
-        "format": "<span color='#FF4A76'>{icon}</span> {volume}%",
+        "format": "<span color='#AD6769'>{icon}</span> {volume}%",
         "format-muted": "󰖁 muted",
         "format-icons": {
             "default": ["", "", ""]
