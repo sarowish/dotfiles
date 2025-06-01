@@ -4,7 +4,7 @@ tabs = ["videos", "streams"]
 refresh_threshold = 0
 rss_threshold = 9999
 subtitle_languages = ["en", "tr"]
-video_quality = "1440p"
+video_quality = "2160p"
 
 focused = { fg = "Magenta", bg = "Black", modifiers = "bold" }
 selected_block = { fg = "Magenta", modifiers = "bold" }
