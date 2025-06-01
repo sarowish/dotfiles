@@ -6,3 +6,9 @@ disabled = true
 [character]
 success_symbol = "[➜](bold green) "
 error_symbol = "[➜](bold red) "
+
+[custom.jj]
+command='''starship-jj --ignore-working-copy starship prompt'''
+format = "on [$symbol](blue bold) $output "
+symbol = ""
+when = "jj root --ignore-working-copy"
