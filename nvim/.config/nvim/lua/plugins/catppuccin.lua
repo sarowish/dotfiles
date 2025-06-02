@@ -113,6 +113,8 @@ return {
                 ["@keyword.function"] = { fg = c.red },
                 ["@conditional"] = { fg = c.red },
                 ["@keyword.return"] = { fg = c.red },
+                ["@keyword.repeat"] = { fg = c.red },
+                ["@keyword.conditional"] = { fg = c.red },
                 ["@parameter"] = { fg = c.mauve },
                 ["@repeat"] = { fg = c.red },
                 ["@field"] = { fg = c.mauve },
