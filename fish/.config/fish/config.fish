@@ -13,3 +13,4 @@ abbr zatt 'zathura --fork'
 zoxide init fish | source
 starship init fish | source
 skim_key_bindings
+atuin init fish | source
