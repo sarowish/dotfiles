@@ -53,7 +53,7 @@
         "interval": 3,
     },
     "mpris": {
-        "player": "spotify",
+        "player": "spotifyd",
         "format": "{artist} - {title}",
         "title-len": 60,
     },
