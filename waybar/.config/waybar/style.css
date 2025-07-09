@@ -17,7 +17,7 @@ window#waybar {
 }
 
 #workspaces button.active {
-    color: #AD6769;
+    color: #B56479;
 }
 
 #workspaces button:hover {
@@ -25,11 +25,11 @@ window#waybar {
 }
 
 #tags button.occupied {
-    color: #AD6769;
+    color: #B56479;
 } 
 
 #tags button.focused {
-    color: #AD6769;
+    color: #B56479;
 }
 
 #clock,
