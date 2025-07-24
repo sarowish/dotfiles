@@ -11,7 +11,3 @@ preferred_audio_codec = "webm"
 focused = { fg = "Magenta", bg = "Black", modifiers = "bold" }
 selected_block = { fg = "Magenta", modifiers = "bold" }
 error = { fg = "Red", modifiers = "italic" }
-
-[key_bindings]
-"p" = "play_from_formats"
-"P" = "play_video"
