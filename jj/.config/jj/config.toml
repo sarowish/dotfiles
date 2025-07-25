@@ -1,0 +1,15 @@
+"$schema" = "https://jj-vcs.github.io/jj/latest/config-schema.json"
+
+[user]
+name = "Berke Enercan"
+email = "berkeenercan@tutanota.com"
+
+[ui]
+default-command = "log"
+
+[signing]
+behavior = "drop"
+backend = "gpg"
+
+[git]
+sign-on-push = true
