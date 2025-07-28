@@ -1,0 +1,9 @@
+[[themes]]
+name = "mine"
+
+[themes.component_style]
+block_title = { fg = "BrightCyan", modifiers = ["Bold"]}
+selection = { fg = "Magenta", bg = "Black", modifiers = ["Bold"] }
+playback_progress_bar = { bg = "BrightBlack", fg = "Red"}
+table_header = { fg = "Yellow", modifiers = ["Bold"] }
+current_playing = { fg = "Blue" }
