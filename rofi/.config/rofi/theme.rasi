@@ -4,7 +4,7 @@
     foreground:             #d9e0ee;
     background:             rgba(51, 53, 58, 65%);
     background-input:       rgba(127, 132, 155, 15%);
-    background-selected:    #B56479;
+    background-selected:    #31957F;
 }
 
 window {
