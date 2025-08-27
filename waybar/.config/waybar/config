@@ -5,7 +5,7 @@
     "spacing": 8,
     "margin-left": 8,
     "margin-right": 8,
-    "modules-left": ["hyprland/workspaces", "mpris"],
+    "modules-left": ["hyprland/workspaces", "mpd"],
     "modules-center": ["clock"],
     "modules-right": ["pulseaudio", "hyprland/language", "custom/memory", "cpu", "tray"],
     "hyprland/workspaces": {
@@ -52,10 +52,19 @@
         "exec": "free -m | awk '/Mem:/{printf $3}'",
         "interval": 3,
     },
-    "mpris": {
-        "player": "spotifyd",
+    "mpd": {
         "format": "{artist} - {title}",
-        "title-len": 60,
+        "format-stopped": "     ",
+        "tooltip-format": "{stateIcon}: {artist} - {title}  [{elapsedTime:%M:%S}/{totalTime:%M:%S}]",
+        "interval": 10,
+        "state-icons": {
+            "playing": "Playing",
+            "paused": "Paused",
+        },
+        "title-len": 80,
+        "on-click": "mpc toggle",
+        "on-scroll-up": "mpc next",
+        "on-scroll-down": "mpc cdprev",
     },
     "pulseaudio": {
         "scroll-step": 5, // %, can be a float
