@@ -1,42 +1,40 @@
 * {
-    border: none;
-    border-radius: 0;
-    font-family: "Fira Sans Book", "Nerd Fonts";
-    min-height: 0;
+  border: none;
+  border-radius: 0;
+  font-family: "Fira Sans Book", "Nerd Fonts";
+  min-height: 0;
 }
 
 window#waybar {
-    background: transparent;
-    color: white;
+  background: transparent;
+  color: white;
 }
 
 #workspaces button {
-    padding: 0 2px;
-    background: transparent;
-    color: white;
+  padding: 0 2px;
+  background: transparent;
+  color: white;
 }
 
 #workspaces button.active {
-    color: #31957F;
+  color: #31957f;
 }
 
 #workspaces button:hover {
-    text-shadow: inherit;
+  text-shadow: inherit;
 }
 
 #tags button.occupied {
-    color: #31957F;
-} 
+  color: #31957f;
+}
 
 #tags button.focused {
-    color: #31957F;
+  color: #31957f;
 }
 
 #clock,
-#pulseaudio
-#language,
+#pulseaudio #language,
 #cpu,
 #memory {
-    padding: 0 4px;
+  padding: 0 4px;
 }
-

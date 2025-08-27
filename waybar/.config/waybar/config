@@ -1,79 +1,84 @@
 {
-    "layer": "top",
-    "position": "bottom",
-    "height": 30,
-    "spacing": 8,
-    "margin-left": 8,
-    "margin-right": 8,
-    "modules-left": ["hyprland/workspaces", "mpd"],
-    "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "hyprland/language", "custom/memory", "cpu", "tray"],
-    "hyprland/workspaces": {
-        "disable-scroll": true,
-        "persistent-workspaces": {
-            "*": 9,
-        },
-        "all-outputs": false,
-        "on-scroll-up": "hyprctl dispatch workspace m+1",
-        "on-scroll-down": "hyprctl dispatch workspace m-1",
-        "on-click": "activate",
-        "format": "{icon}",
-        "format-icons": {
-            "urgent": "",
-            "active": "",
-            "default": "",
-            "empty": "",
-        }
+  "layer": "top",
+  "position": "bottom",
+  "height": 30,
+  "spacing": 8,
+  "margin-left": 8,
+  "margin-right": 8,
+  "modules-left": ["hyprland/workspaces", "mpd"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "pulseaudio",
+    "hyprland/language",
+    "custom/memory",
+    "cpu",
+    "tray"
+  ],
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "persistent-workspaces": {
+      "*": 9
     },
-    "hyprland/language": {
-        "format": "<span color='#31957F'>󰌌</span>  {}",
-        "format-en": "English",
-        "format-en-colemak_dh": "Colemak-DH",
-        "format-tr": "Turkish",
+    "all-outputs": false,
+    "on-scroll-up": "hyprctl dispatch workspace m+1",
+    "on-scroll-down": "hyprctl dispatch workspace m-1",
+    "on-click": "activate",
+    "format": "{icon}",
+    "format-icons": {
+      "urgent": "",
+      "active": "",
+      "default": "",
+      "empty": ""
+    }
+  },
+  "hyprland/language": {
+    "format": "<span color='#31957F'>󰌌</span>  {}",
+    "format-en": "English",
+    "format-en-colemak_dh": "Colemak-DH",
+    "format-tr": "Turkish"
+  },
+  "tray": {
+    // "icon-size": 21,
+    "spacing": 10,
+    "show-passive-items": true
+  },
+  "clock": {
+    // "timezone": "America/New_York",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "interval": 1,
+    "format": "{:%e %B %A %H:%M:%S}",
+    "format-alt": "{:%Y-%m-%d}"
+  },
+  "cpu": {
+    "format": "<span color='#31957F'></span> {usage}%",
+    "tooltip": false
+  },
+  "custom/memory": {
+    "format": "<span color='#31957F'></span> {} MiB",
+    "exec": "free -m | awk '/Mem:/{printf $3}'",
+    "interval": 3
+  },
+  "mpd": {
+    "format": "{artist} - {title}",
+    "format-stopped": "     ",
+    "tooltip-format": "{stateIcon}: {artist} - {title}  [{elapsedTime:%M:%S}/{totalTime:%M:%S}]",
+    "interval": 10,
+    "state-icons": {
+      "playing": "Playing",
+      "paused": "Paused"
     },
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 10,
-        "show-passive-items": true,
+    "title-len": 80,
+    "on-click": "mpc toggle",
+    "on-scroll-up": "mpc next",
+    "on-scroll-down": "mpc cdprev"
+  },
+  "pulseaudio": {
+    "scroll-step": 5, // %, can be a float
+    "format": "<span color='#31957F'>{icon}</span> {volume}%",
+    "format-muted": "󰖁 muted",
+    "format-icons": {
+      "default": ["", "", ""]
     },
-    "clock": {
-        // "timezone": "America/New_York",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "interval": 1,
-        "format": "{:%e %B %A %H:%M:%S}",
-        "format-alt": "{:%Y-%m-%d}"
-    },
-    "cpu": {
-        "format": "<span color='#31957F'></span> {usage}%",
-        "tooltip": false
-    },
-    "custom/memory": {
-        "format": "<span color='#31957F'></span> {} MiB",
-        "exec": "free -m | awk '/Mem:/{printf $3}'",
-        "interval": 3,
-    },
-    "mpd": {
-        "format": "{artist} - {title}",
-        "format-stopped": "     ",
-        "tooltip-format": "{stateIcon}: {artist} - {title}  [{elapsedTime:%M:%S}/{totalTime:%M:%S}]",
-        "interval": 10,
-        "state-icons": {
-            "playing": "Playing",
-            "paused": "Paused",
-        },
-        "title-len": 80,
-        "on-click": "mpc toggle",
-        "on-scroll-up": "mpc next",
-        "on-scroll-down": "mpc cdprev",
-    },
-    "pulseaudio": {
-        "scroll-step": 5, // %, can be a float
-        "format": "<span color='#31957F'>{icon}</span> {volume}%",
-        "format-muted": "󰖁 muted",
-        "format-icons": {
-            "default": ["", "", ""]
-        },
-        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
-    },
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+  }
 }
-
