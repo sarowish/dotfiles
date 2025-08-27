@@ -19,4 +19,3 @@ atuin init fish | source
 
 bind ctrl-r _atuin_search
 bind -M insert ctrl-r _atuin_search
-bind down _atuin_bind_up
